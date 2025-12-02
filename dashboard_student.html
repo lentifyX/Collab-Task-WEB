@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="dashboard-layout">
+        <aside class="sidebar">
+            <div class="logo">CollabTask <br><span style="font-size:0.7rem; font-weight:normal;">Sistem Kolaborasi Tugas</span></div>
+            <ul class="nav-menu">
+                <li><a href="dashboard_student.html" class="active"><i class="fas fa-home"></i> Dashboard</a></li>
+                <li><a href="#"><i class="fas fa-check-square"></i> My Tasks</a></li>
+                <li><a href="#"><i class="fas fa-users"></i> Team</a></li>
+                <li><a href="#"><i class="fas fa-chart-bar"></i> Analytics</a></li>
+                <li><a href="settings_student.html"><i class="fas fa-cog"></i> Settings</a></li>
+            </ul>
+            <a href="index.html" class="logout-btn"><i class="fas fa-sign-out-alt"></i> Log Out</a>
+        </aside>
+
+        <main class="main-content">
+            <div class="top-header">
+                <h2>Dashboard</h2>
+                <div class="header-right">
+                    <div class="search-box"><input type="text" placeholder="Search..."></div>
+                    <div class="icon-btn"><i class="far fa-bell"></i><span class="notification-dot"></span></div>
+
+                    <div class="header-avatar bg-student" onclick="toggleDropdown()">A</div>
+
+                    <div id="profileDropdown" class="dropdown-menu dropdown-hidden">
+                        <div class="dropdown-header">
+                            <div class="header-avatar bg-student" style="width: 35px; height: 35px; font-size: 0.9rem;">A</div>
+                            <div class="dropdown-user-info">
+                                <h4>Alice Johnson</h4>
+                                <span>alice@university.edu</span>
+                            </div>
+                        </div>
+                        <ul class="dropdown-links">
+                            <li><a href="settings_student.html"><i class="fas fa-cog"></i> Settings</a></li>
+                            <li><a href="role_selection.html"><i class="fas fa-user-tag"></i> Change Role</a></li>
+                            <li style="border-top: 1px solid #f3f4f6;"><a href="index.html" class="text-red"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+                        </ul>
+                    </div>
+                    </div>
+            </div>
+            <div class="user-banner">
+                <div class="user-avatar-circle bg-student">A</div>
+                <div class="user-details">
+                    <h4>Alice Johnson</h4>
+                    <span>Student</span>
+                </div>
+                <div class="permissions-text">
+                    <strong>Permissions:</strong> Join projects, View assigned tasks, Update task progress...
+                </div>
+            </div>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div style="color: #2563eb;"><i class="fas fa-project-diagram"></i></div>
+                    <div class="stat-val">3</div>
+                    <div class="stat-label">Total Projects</div>
+                </div>
+                <div class="stat-card">
+                    <div style="color: #16a34a;"><i class="fas fa-check-circle"></i></div>
+                    <div class="stat-val">5</div>
+                    <div class="stat-label">Active Tasks</div>
+                </div>
+                <div class="stat-card">
+                    <div style="color: #9333ea;"><i class="fas fa-bullseye"></i></div>
+                    <div class="stat-val">0</div>
+                    <div class="stat-label">Completed</div>
+                </div>
+                <div class="stat-card">
+                    <div style="color: #ea580c;"><i class="fas fa-user-friends"></i></div>
+                    <div class="stat-val">5</div>
+                    <div class="stat-label">Team Members</div>
+                </div>
+            </div>
+
+            <h3>My Projects</h3>
+            <br>
+            <div class="project-list">
+                <div class="project-card">
+                    <div class="project-header">
+                        <h4>Website Redesign</h4>
+                        <span class="badge badge-progress">In Progress</span>
+                    </div>
+                    <p class="project-desc">Redesign company website with modern UI</p>
+                    <div class="project-meta"><i class="far fa-user"></i> 4 members</div>
+                    <div class="project-meta"><i class="far fa-calendar-alt"></i> Due: 2025-12-15</div>
+                    <div class="progress-section">
+                        <div class="progress-labels"><span>Progress</span><span>58%</span></div>
+                        <div class="progress-bar"><div class="progress-fill" style="width: 58%;"></div></div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-header">
+                        <h4>Mobile App Development</h4>
+                        <span class="badge badge-progress">In Progress</span>
+                    </div>
+                    <p class="project-desc">Develop cross-platform mobile application</p>
+                    <div class="project-meta"><i class="far fa-user"></i> 5 members</div>
+                    <div class="project-meta"><i class="far fa-calendar-alt"></i> Due: 2025-12-20</div>
+                    <div class="progress-section">
+                        <div class="progress-labels"><span>Progress</span><span>75%</span></div>
+                        <div class="progress-bar"><div class="progress-fill" style="width: 75%;"></div></div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-header">
+                        <h4>Database Migration</h4>
+                        <span class="badge badge-completed">Completed</span>
+                    </div>
+                    <p class="project-desc">Migrate legacy database to cloud</p>
+                    <div class="project-meta"><i class="far fa-user"></i> 3 members</div>
+                    <div class="project-meta"><i class="far fa-calendar-alt"></i> Due: 2025-11-30</div>
+                    <div class="progress-section">
+                        <div class="progress-labels"><span>Progress</span><span>100%</span></div>
+                        <div class="progress-bar"><div class="progress-fill" style="width: 100%;"></div></div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="dropdown.js"></script>
+</body>
+</html>
